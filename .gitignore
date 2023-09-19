@@ -1,0 +1,9 @@
+/notebooks/pretrained_checkpoints/*
+/notebooks/pytorch-mask-r-cnn-instance-segmentation/*
+/notebooks/Datasets/*
+/notebooks/.ipynb_checkpoints/*
+/notebooks/*.ttf
+/notebooks/*.jpg
+/notebooks/*.png
+/notebooks/*.onnx
+/notebooks/__pycache__/*
