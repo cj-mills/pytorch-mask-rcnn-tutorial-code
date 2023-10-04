@@ -2,7 +2,7 @@ from torch.utils.data import Dataset
 import torch
 import torchvision
 torchvision.disable_beta_transforms_warning()
-from torchvision.datapoints import BoundingBox, Mask
+from torchvision.tv_tensors import BoundingBoxes, Mask
 import torchvision.transforms.v2  as transforms
 
 from PIL import Image, ImageDraw
@@ -91,7 +91,7 @@ class StudentIDDataset(Dataset):
         masks = Mask(torch.concat([Mask(transforms.PILToTensor()(mask_img), dtype=torch.bool) for mask_img in mask_imgs]))
 
         # Generate bounding box annotations from segmentation masks
-        bboxes = BoundingBox(data=torchvision.ops.masks_to_boxes(masks), format='xyxy', spatial_size=image.size[::-1])
+        bboxes = BoundingBoxes(data=torchvision.ops.masks_to_boxes(masks), format='xyxy', canvas_size=image.size[::-1])
                 
         return image, {'masks': masks,'boxes': bboxes, 'labels': labels}
     
