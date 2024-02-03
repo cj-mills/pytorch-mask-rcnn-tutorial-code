@@ -7,3 +7,8 @@
 /notebooks/*.png
 /notebooks/*.onnx
 /notebooks/__pycache__/*
+
+
+# Temporary
+/notebooks/pytorch-mask-r-cnn-training (copy).ipynb
+/notebooks/pytorch-mask-r-cnn-training-windows-arc.ipynb
